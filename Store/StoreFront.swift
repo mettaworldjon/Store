@@ -78,8 +78,9 @@ extension StoreFront {
             categoryCollection.topAnchor.constraint(equalTo: categoryButtons.bottomAnchor, constant: 19),
             categoryCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             categoryCollection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            categoryCollection.heightAnchor.constraint(equalToConstant: 1000)
+            categoryCollection.heightAnchor.constraint(equalTo: view.heightAnchor, constant: -170)
             ])
+        
         
     }
 }
@@ -123,7 +124,6 @@ extension StoreFront:UICollectionViewDelegate, UICollectionViewDataSource, UICol
             return cell
         case categoryCollection:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryID, for: indexPath) as! CategoryCells
-            cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor(red:0.96, green:0.97, blue:0.98, alpha:1.0) : .darkGray
             return cell
         default:
             return UICollectionViewCell()
