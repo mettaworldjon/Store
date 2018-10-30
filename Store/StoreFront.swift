@@ -19,6 +19,15 @@ class StoreFront: UIViewController {
         return title
     }()
     
+    let cartButton:UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "Cart")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        btn.widthAnchor.constraint(equalToConstant: 23).isActive = true
+        return btn
+    }()
+    
     let categoryButtons:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -59,7 +68,7 @@ class StoreFront: UIViewController {
 
 extension StoreFront {
     func setupUIElements() {
-        // Header
+    
         view.addSubview(storeTitle)
         NSLayoutConstraint.activate([
             storeTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
@@ -81,6 +90,11 @@ extension StoreFront {
             categoryCollection.heightAnchor.constraint(equalTo: view.heightAnchor, constant: -170)
             ])
         
+        view.addSubview(cartButton)
+        NSLayoutConstraint.activate([
+            cartButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            cartButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30)
+            ])
         
     }
 }
