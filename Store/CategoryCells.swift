@@ -49,12 +49,15 @@ class CategoryCells: UICollectionViewCell {
 
 extension CategoryCells: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return Data.item.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionItems.dequeueReusableCell(withReuseIdentifier: cvID, for: indexPath) as! CategoryItemCell
-        
+        cell.itemTitle.text = Data.item[indexPath.item].itemTitle
+        cell.itemImage.image = UIImage(named: "\(Data.item[indexPath.item].itemImage)")
+        cell.itemManufacturer.text = Data.item[indexPath.item].itemManufacturer
+        cell.itemRating.rating = Double(Data.item[indexPath.item].itemRating)
         return cell
     }
     

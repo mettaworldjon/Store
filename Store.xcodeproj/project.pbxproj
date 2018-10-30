@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4923EF862187779F00E3F0A1 /* RatingSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4923EF852187779F00E3F0A1 /* RatingSystem.swift */; };
+		4923EF9121878CDE00E3F0A1 /* FaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4923EF8821878CDE00E3F0A1 /* FaveButton.swift */; };
+		4923EF9221878CDE00E3F0A1 /* FaveIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4923EF8921878CDE00E3F0A1 /* FaveIcon.swift */; };
+		4923EF9321878CDE00E3F0A1 /* Constraints+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4923EF8B21878CDE00E3F0A1 /* Constraints+.swift */; };
+		4923EF9421878CDE00E3F0A1 /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4923EF8C21878CDE00E3F0A1 /* Easing.swift */; };
+		4923EF9521878CDE00E3F0A1 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4923EF8D21878CDE00E3F0A1 /* Geometry.swift */; };
+		4923EF9621878CDE00E3F0A1 /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4923EF8E21878CDE00E3F0A1 /* Init.swift */; };
+		4923EF9721878CDE00E3F0A1 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4923EF8F21878CDE00E3F0A1 /* Ring.swift */; };
+		4923EF9821878CDE00E3F0A1 /* Spark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4923EF9021878CDE00E3F0A1 /* Spark.swift */; };
 		4964197421834782005EA6B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4964197321834782005EA6B3 /* AppDelegate.swift */; };
 		4964197621834782005EA6B3 /* StoreFront.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4964197521834782005EA6B3 /* StoreFront.swift */; };
 		4964197B21834783005EA6B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4964197A21834783005EA6B3 /* Assets.xcassets */; };
@@ -18,6 +27,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4923EF852187779F00E3F0A1 /* RatingSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingSystem.swift; sourceTree = "<group>"; };
+		4923EF8821878CDE00E3F0A1 /* FaveButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaveButton.swift; sourceTree = "<group>"; };
+		4923EF8921878CDE00E3F0A1 /* FaveIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaveIcon.swift; sourceTree = "<group>"; };
+		4923EF8B21878CDE00E3F0A1 /* Constraints+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraints+.swift"; sourceTree = "<group>"; };
+		4923EF8C21878CDE00E3F0A1 /* Easing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Easing.swift; sourceTree = "<group>"; };
+		4923EF8D21878CDE00E3F0A1 /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		4923EF8E21878CDE00E3F0A1 /* Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Init.swift; sourceTree = "<group>"; };
+		4923EF8F21878CDE00E3F0A1 /* Ring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
+		4923EF9021878CDE00E3F0A1 /* Spark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spark.swift; sourceTree = "<group>"; };
 		4964197021834782005EA6B3 /* Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Store.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4964197321834782005EA6B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4964197521834782005EA6B3 /* StoreFront.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreFront.swift; sourceTree = "<group>"; };
@@ -41,6 +59,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4923EF8721878CDE00E3F0A1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				4923EF8821878CDE00E3F0A1 /* FaveButton.swift */,
+				4923EF8921878CDE00E3F0A1 /* FaveIcon.swift */,
+				4923EF8A21878CDE00E3F0A1 /* Helpers */,
+				4923EF8F21878CDE00E3F0A1 /* Ring.swift */,
+				4923EF9021878CDE00E3F0A1 /* Spark.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		4923EF8A21878CDE00E3F0A1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4923EF8B21878CDE00E3F0A1 /* Constraints+.swift */,
+				4923EF8C21878CDE00E3F0A1 /* Easing.swift */,
+				4923EF8D21878CDE00E3F0A1 /* Geometry.swift */,
+				4923EF8E21878CDE00E3F0A1 /* Init.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		4964196721834781005EA6B3 = {
 			isa = PBXGroup;
 			children = (
@@ -65,7 +106,9 @@
 				4964198521834E68005EA6B3 /* CategoryBtnCells.swift */,
 				4964198921836166005EA6B3 /* CategoryCells.swift */,
 				4988DE4B21869A760065FC27 /* CategoryItemCell.swift */,
+				4923EF852187779F00E3F0A1 /* RatingSystem.swift */,
 				4964198721835395005EA6B3 /* Data.swift */,
+				4923EF8721878CDE00E3F0A1 /* Source */,
 				4964197A21834783005EA6B3 /* Assets.xcassets */,
 				4964197C21834783005EA6B3 /* LaunchScreen.storyboard */,
 				4964197F21834783005EA6B3 /* Info.plist */,
@@ -143,11 +186,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4923EF9621878CDE00E3F0A1 /* Init.swift in Sources */,
 				4964197621834782005EA6B3 /* StoreFront.swift in Sources */,
+				4923EF9521878CDE00E3F0A1 /* Geometry.swift in Sources */,
+				4923EF9121878CDE00E3F0A1 /* FaveButton.swift in Sources */,
+				4923EF862187779F00E3F0A1 /* RatingSystem.swift in Sources */,
 				4964198621834E68005EA6B3 /* CategoryBtnCells.swift in Sources */,
+				4923EF9221878CDE00E3F0A1 /* FaveIcon.swift in Sources */,
 				4964198A21836166005EA6B3 /* CategoryCells.swift in Sources */,
 				4964197421834782005EA6B3 /* AppDelegate.swift in Sources */,
+				4923EF9821878CDE00E3F0A1 /* Spark.swift in Sources */,
+				4923EF9721878CDE00E3F0A1 /* Ring.swift in Sources */,
 				4988DE4C21869A760065FC27 /* CategoryItemCell.swift in Sources */,
+				4923EF9321878CDE00E3F0A1 /* Constraints+.swift in Sources */,
+				4923EF9421878CDE00E3F0A1 /* Easing.swift in Sources */,
 				4964198821835395005EA6B3 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
