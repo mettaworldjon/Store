@@ -25,8 +25,6 @@ class CategoryBtnCells: UICollectionViewCell {
         shadow.translatesAutoresizingMaskIntoConstraints = false
         shadow.layer.cornerRadius = 15.5
         shadow.clipsToBounds = false
-        // shadow.layer.shadowColor = UIColor(red:0.93, green:0.95, blue:0.96, alpha:1.00).cgColor
-        // shadow.layer.shadowOpacity = 0.7
         shadow.layer.shadowColor = UIColor.lightGray.cgColor
         shadow.layer.shadowRadius = 1
         shadow.layer.shadowOpacity = 0.2
@@ -38,6 +36,7 @@ class CategoryBtnCells: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.clipsToBounds = false
+        
         setupUI()
     }
     

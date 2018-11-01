@@ -8,11 +8,13 @@
 
 import UIKit
 
+
+
 class CategoryItemCell: UICollectionViewCell {
     
     
-    let shadowView:UIView = {
-        let shadow = UIView()
+    let shadowView:UIButton = {
+        let shadow = UIButton(type: .system)
         shadow.translatesAutoresizingMaskIntoConstraints = false
         shadow.layer.cornerRadius = 15.5
         shadow.clipsToBounds = false
@@ -21,6 +23,7 @@ class CategoryItemCell: UICollectionViewCell {
         shadow.layer.shadowOpacity = 0.2
         shadow.layer.shadowOffset = CGSize(width: 0, height: 1)
         shadow.backgroundColor = .white
+        shadow.isUserInteractionEnabled = true
         return shadow
     }()
     
@@ -111,8 +114,12 @@ class CategoryItemCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         constraints()
+        shadowView.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
     }
     
+    @objc func handleTap() {
+        print("Hello World")
+    }
     
     func constraints() {
         self.addSubview(shadowView)

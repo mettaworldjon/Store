@@ -95,7 +95,6 @@ extension StoreFront {
             cartButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             cartButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30)
             ])
-        
     }
 }
 
@@ -117,7 +116,6 @@ extension StoreFront {
 
 extension StoreFront:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         // Identify Collection
         switch collectionView {
         case categoryButtons:
@@ -127,7 +125,6 @@ extension StoreFront:UICollectionViewDelegate, UICollectionViewDataSource, UICol
         default:
             return 4
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -158,15 +155,39 @@ extension StoreFront:UICollectionViewDelegate, UICollectionViewDataSource, UICol
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch collectionView {
+        case categoryButtons:
+            categoryCollection.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            categoryButtons.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            changeSelected(selected: indexPath.item)
+        case categoryCollection:
+            print(indexPath.row)
+        default:
+            print("Hello World")
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         switch collectionView {
         case categoryButtons:
-            return UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
+            return UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
         default:
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             
         }
+    }
+    
+    func changeSelected(selected:Int) {
+        let cells = categoryButtons.visibleCells as! [CategoryBtnCells]
+        for cellItem in cells {
+            UIView.animate(withDuration: 0.1) {
+                cellItem.shadowView.backgroundColor = .white
+                cellItem.categoryType.textColor = UIColor(red:0.04, green:0.55, blue:1.00, alpha:1.0)
+            }
+        }
+        cells[selected].shadowView.backgroundColor = UIColor(red:0.04, green:0.55, blue:1.00, alpha:1.0)
+        cells[selected].categoryType.textColor = .white
     }
     
 }
