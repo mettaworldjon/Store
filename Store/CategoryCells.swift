@@ -10,6 +10,8 @@ import UIKit
 
 class CategoryCells: UICollectionViewCell {
     
+    var parentController:StoreFront?
+    
     let collectionItems:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -54,10 +56,15 @@ extension CategoryCells: UICollectionViewDelegate, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionItems.dequeueReusableCell(withReuseIdentifier: cvID, for: indexPath) as! CategoryItemCell
-        cell.itemTitle.text = Data.item[indexPath.item].itemTitle
-        cell.itemImage.image = UIImage(named: "\(Data.item[indexPath.item].itemImage)")
-        cell.itemManufacturer.text = Data.item[indexPath.item].itemManufacturer
+//        cell.itemTitle.text = Data.item[indexPath.item].itemTitle
+//        cell.itemImage.image = UIImage(named: "\(Data.item[indexPath.item].itemImage)")
+//        cell.itemManufacturer.text = Data.item[indexPath.item].itemManufacturer
         cell.itemRating.rating = Double(Data.item[indexPath.item].itemRating)
+        
+        cell.itemData = Data.item[indexPath.item]
+        if let safeParentController = parentController {
+            cell.categoryItemCellDelegate = safeParentController
+        }
         return cell
     }
     
@@ -70,4 +77,9 @@ extension CategoryCells: UICollectionViewDelegate, UICollectionViewDataSource, U
         collectionItems.dataSource = self
         collectionItems.register(CategoryItemCell.self, forCellWithReuseIdentifier: cvID)
     }
+}
+
+
+extension CategoryCells {
+    
 }

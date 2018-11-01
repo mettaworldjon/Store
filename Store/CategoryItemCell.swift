@@ -8,9 +8,23 @@
 
 import UIKit
 
-
+protocol CategoryItemCellDelegate {
+    func openItem()
+}
 
 class CategoryItemCell: UICollectionViewCell {
+    
+    var categoryItemCellDelegate:CategoryItemCellDelegate?
+    
+    // Data For Item
+    var itemData:Item? {
+        didSet {
+            itemImage.image = UIImage(named: itemData?.itemImage ?? "dinningchair")
+            itemTitle.text = itemData?.itemTitle
+            itemManufacturer.text = itemData?.itemManufacturer
+            
+        }
+    }
     
     
     let shadowView:UIButton = {
@@ -114,11 +128,12 @@ class CategoryItemCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         constraints()
-        shadowView.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
+        shadowView.addTarget(self, action: #selector(openItem), for: .touchUpInside)
     }
     
-    @objc func handleTap() {
+    @objc func openItem() {
         print("Hello World")
+        categoryItemCellDelegate?.openItem()
     }
     
     func constraints() {

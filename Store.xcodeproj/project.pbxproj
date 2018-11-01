@@ -103,9 +103,9 @@
 			children = (
 				4964197321834782005EA6B3 /* AppDelegate.swift */,
 				4964197521834782005EA6B3 /* StoreFront.swift */,
-				4964198521834E68005EA6B3 /* CategoryBtnCells.swift */,
 				4964198921836166005EA6B3 /* CategoryCells.swift */,
 				4988DE4B21869A760065FC27 /* CategoryItemCell.swift */,
+				4964198521834E68005EA6B3 /* CategoryBtnCells.swift */,
 				4923EF852187779F00E3F0A1 /* RatingSystem.swift */,
 				4964198721835395005EA6B3 /* Data.swift */,
 				4923EF8721878CDE00E3F0A1 /* Source */,
