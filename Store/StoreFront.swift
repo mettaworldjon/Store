@@ -53,7 +53,12 @@ class StoreFront: UIViewController {
     }()
     let categoryID = "categoryCollection"
     
-    
+    let selectedItem:UIView = {
+        let container = UIView()
+        container.translatesAutoresizingMaskIntoConstraints = false
+        
+        return container
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,6 +140,7 @@ extension StoreFront:UICollectionViewDelegate, UICollectionViewDataSource, UICol
             cell.categoryType.text = Data.categories[indexPath.item]
             cell.shadowView.backgroundColor = indexPath.item == 0 ? UIColor(red:0.04, green:0.55, blue:1.00, alpha:1.0) : .white
             cell.categoryType.textColor = indexPath.item == 0 ? .white : UIColor(red:0.04, green:0.55, blue:1.00, alpha:1.0)
+            cell.active = indexPath.item == 0 ? true : false
             return cell
         case categoryCollection:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryID, for: indexPath) as! CategoryCells
@@ -183,17 +189,30 @@ extension StoreFront:UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        // Active and Deactive Button on Category Change
         let x = targetContentOffset.pointee.x
         let target = Int(x / view.frame.width)
-        changeSelected(selected: target)
+        let cells = categoryButtons.visibleCells as! [CategoryBtnCells]
+        for (index,cell) in cells.enumerated() {
+            if index == target {
+                cells[index].shadowView.backgroundColor = UIColor(red:0.04, green:0.55, blue:1.00, alpha:1.0)
+                cells[index].categoryType.textColor = .white
+            } else {
+                cell.shadowView.backgroundColor = .white
+                cell.categoryType.textColor = UIColor(red:0.04, green:0.55, blue:1.00, alpha:1.0)
+            }
+        }
+        categoryButtons.scrollToItem(at: IndexPath(item: target, section: 0), at: .centeredHorizontally, animated: true)
     }
     
     func changeSelected(selected:Int) {
         let cells = categoryButtons.visibleCells as! [CategoryBtnCells]
         for cellItem in cells {
-            UIView.animate(withDuration: 0.1) {
+            UIView.animate(withDuration: 0.3) {
+                // Deactive
                 cellItem.shadowView.backgroundColor = .white
                 cellItem.categoryType.textColor = UIColor(red:0.04, green:0.55, blue:1.00, alpha:1.0)
+                // Active
                 cells[selected].shadowView.backgroundColor = UIColor(red:0.04, green:0.55, blue:1.00, alpha:1.0)
                 cells[selected].categoryType.textColor = .white
             }

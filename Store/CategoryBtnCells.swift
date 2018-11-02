@@ -10,6 +10,8 @@ import UIKit
 
 class CategoryBtnCells: UICollectionViewCell {
     
+    var active = false
+    
     let categoryType:UILabel = {
         let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
